@@ -24,16 +24,6 @@ jib {
     to {
         image = "apbogomazov/${rootProject.name}:latest"
     }
-    container {
-        ports = listOf("8080", "18080")
-        user = "100"
-        entrypoint = listOf(
-            "sh", "-c", "./entry.sh"
-        )
-    }
-    extraDirectories {
-        permissions = mapOf(Pair("/entry.sh", "777"))
-    }
 }
 
 tasks.test {
